@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Chen | UI/UX & 數位媒體設計師 個人作品集與簡介</title>
+  <meta name="description" content="Elena Chen - 專注於數位媒體、UI/UX 與互動體驗設計的新世代設計師。以簡約優雅的雜誌排版美學，展現設計理念、核心技能與精選專案。">
+  <meta name="keywords" content="UI/UX 設計師, 數位媒體, 作品集, 履歷, 互動設計, 個人網站, 雜誌排版, Figma, 前端體驗">
+  <meta name="author" content="Elena Chen">
+
+  <!-- Google Fonts: Editorial Serif & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Notification / Status Banner -->
+  <aside class="editorial-topbar" id="topbar">
+    <div class="topbar-content container">
+      <span class="topbar-tag">
+        <span class="pulse-indicator"></span>
+        <span data-editable="true" data-key="statusBadge">2024 / 2025 應屆畢業生 • 現正積極尋求 UI/UX 設計與產品實習 / 正職職缺</span>
+      </span>
+      <div class="topbar-right">
+        <span class="local-time" id="localTimeDisplay">TAIPEI 00:00:00</span>
+        <span class="separator">|</span>
+        <span class="issue-no">ISSUE NO. 04 / EDITION 2024</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+      <a href="#hero" class="brand-monogram" aria-label="返回首頁">
+        <span class="brand-mark">EC</span>
+        <div class="brand-text">
+          <span class="brand-name" data-editable="true" data-key="brandName">ELENA CHEN</span>
+          <span class="brand-role" data-editable="true" data-key="brandSub">DIGITAL & INTERACTION DESIGN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="main-nav" aria-label="主選單">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">關於理念</a></li>
+          <li><a href="#skills" class="nav-link">核心矩陣</a></li>
+          <li><a href="#projects" class="nav-link">精選專案</a></li>
+          <li><a href="#experience" class="nav-link">成長歷程</a></li>
+          <li><a href="#contact" class="nav-link">聯絡合作</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Tools (Theme, Edit Mode, Print) -->
+      <div class="header-actions">
+        <!-- Live Edit Switch -->
+        <button type="button" class="btn-tool edit-toggle" id="editModeToggle" title="切換就地編輯模式 (可直接點擊文字修改內容)" aria-pressed="false">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span class="tool-label">即時編輯</span>
+        </button>
+
+        <!-- Theme Switch -->
+        <button type="button" class="btn-tool theme-toggle" id="themeToggle" title="切換深色 / 淺色主題" aria-label="切換深色或淺色主題">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Print Resume Button -->
+        <button type="button" class="btn-tool print-btn" id="printResumeBtn" title="列印或另存乾淨 PDF 履歷">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span class="tool-label print-only-text">履歷</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="btn-tool mobile-menu-toggle" id="mobileMenuToggle" aria-label="展開行動選單" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">關於理念</a></li>
+        <li><a href="#skills" class="mobile-nav-link">核心矩陣</a></li>
+        <li><a href="#projects" class="mobile-nav-link">精選專案</a></li>
+        <li><a href="#experience" class="mobile-nav-link">成長歷程</a></li>
+        <li><a href="#contact" class="mobile-nav-link">聯絡合作</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <p class="mobile-quote">「在秩序中尋求靈感，在細節裡追求極致。」</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Edit Floating Toolbar (Only shown when Live Edit Mode is active) -->
+  <div class="edit-toolbar" id="editToolbar" aria-hidden="true">
+    <div class="edit-toolbar-inner">
+      <div class="edit-status">
+        <span class="edit-badge">● 即時編輯模式啟動中</span>
+        <span class="edit-hint">所有虛線邊框文字均可直接點擊修改</span>
+      </div>
+      <div class="edit-buttons">
+        <button type="button" class="btn-action btn-save" id="btnSaveData">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+          儲存變更
+        </button>
+        <button type="button" class="btn-action btn-export" id="btnExportJSON">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          匯出備份 JSON
+        </button>
+        <button type="button" class="btn-action btn-import" id="btnImportJSON">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          匯入設定
+        </button>
+        <input type="file" id="importFileInput" accept=".json" style="display:none;">
+        <button type="button" class="btn-action btn-reset" id="btnResetData">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          重設範例
+        </button>
+        <button type="button" class="btn-action btn-close-edit" id="btnCloseEdit" title="退出編輯模式">✕ 結束</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- HERO SECTION (Editorial Cover Layout) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Top Editorial Meta Line -->
+        <div class="editorial-meta-line">
+          <span class="meta-tag" data-editable="true" data-key="heroSubtitle">DIGITAL MEDIA & UI/UX DESIGN ARCHIVE</span>
+          <span class="meta-line"></span>
+          <span class="meta-vol">VOL. 01 / 2024–2025</span>
+        </div>
+
+        <div class="hero-grid">
+          <!-- Left: Big Editorial Headline & Introduction -->
+          <div class="hero-left">
+            <div class="hero-greeting">
+              <span class="greeting-badge" data-editable="true" data-key="heroBadge">✦ CREATIVE MIND & LOGICAL DESIGN</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="title-sub" data-editable="true" data-key="heroName">陳思穎 / Elena Chen</span>
+              <span class="title-main" data-editable="true" data-key="heroTagline">設計有溫度的數位體驗，<br>連接人與技術的優雅交會。</span>
+            </h1>
+            <p class="hero-desc" data-editable="true" data-key="heroBio">
+              身為熱愛介面美學與認知心理學的數位媒體設計新鮮人，我專注於將複雜的使用者痛點轉化為直覺、流暢且具高質感的數位產品介面。擅長從用戶訪談、設計系統建構至微互動原型製作，致力於以兼具美感與邏輯的解決方案創造商業價值。
+            </p>
+
+            <!-- Key Highlight Badges / Quick Stats -->
+            <div class="hero-stats">
+              <div class="stat-card">
+                <span class="stat-num" data-editable="true" data-key="stat1Num">12+</span>
+                <span class="stat-label" data-editable="true" data-key="stat1Label">完整 UI/UX 專案研究</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" data-editable="true" data-key="stat2Num">3</span>
+                <span class="stat-label" data-editable="true" data-key="stat2Label">全國性設計大賽榮譽</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num" data-editable="true" data-key="stat3Num">3.94</span>
+                <span class="stat-label" data-editable="true" data-key="stat3Label">大學設計學院前 3% GPA</span>
+              </div>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>瀏覽精選專案</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>聯絡邀約</span>
+              </a>
+              <button type="button" class="btn btn-outline" id="heroCopyEmailBtn">
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span id="heroEmailText">複製信箱 (elena.chen.design@email.com)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Editorial Portrait Card with Magazine Frame -->
+          <div class="hero-right">
+            <div class="portrait-frame">
+              <div class="frame-tag frame-tag-top">FIG. 01 — THE DESIGNER IN STUDIO</div>
+              <div class="portrait-image-wrapper">
+                <img src="assets/images/avatar.jpg" alt="Elena Chen - 數位媒體與 UIUX 設計師" class="portrait-img" id="avatarImage">
+                <div class="image-overlay-vignette"></div>
+                <!-- Image Change Button in Edit Mode -->
+                <button type="button" class="btn-change-image" id="btnChangeAvatar" title="點擊更換個人頭像">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                  更換頭像
+                </button>
+                <input type="file" id="avatarFileInput" accept="image/*" style="display:none;">
+              </div>
+              <div class="frame-caption">
+                <div class="caption-title" data-editable="true" data-key="portraitCaptionTitle">CURRENT STATUS</div>
+                <div class="caption-desc" data-editable="true" data-key="portraitCaptionDesc">
+                  「好的設計並非堆疊花俏的視覺，而是以克制而優雅的方式，將複雜的世界變得條理分明且富有溫度。」
+                </div>
+                <div class="caption-footer">
+                  <span class="badge-role">INTERACTION DESIGN</span>
+                  <span class="badge-location">📍 TAIPEI / REMOTE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: DESIGN PHILOSOPHY / ABOUT (簡約排版與理念) -->
+    <section class="section-editorial about-section" id="about">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">01</span>
+            <span class="eyebrow-text">PHILOSOPHY & ABOUT ME</span>
+          </div>
+          <h2 class="section-title-editorial" data-editable="true" data-key="aboutTitle">
+            在理性的架構中，雕琢感性的互動體驗。
+          </h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Large Editorial Pull Quote -->
+          <div class="about-quote-box">
+            <div class="quote-symbol">“</div>
+            <p class="quote-text" data-editable="true" data-key="aboutQuote">
+              設計師的使命不僅是讓介面好看，更是成為工程實踐與人類心理之間的最佳轉譯者。以使用者為核心的研究，賦予產品堅實的靈魂；以精雕細琢的微動態，為每一次點擊帶來喜悅。
+            </p>
+            <div class="quote-author" data-editable="true" data-key="aboutQuoteAuthor">
+              — Elena Chen, 設計宣言 (Design Manifesto)
+            </div>
+          </div>
+
+          <!-- 3 Core Philosophy Pillars -->
+          <div class="about-pillars">
+            <div class="pillar-item">
+              <span class="pillar-index">01.1</span>
+              <h3 class="pillar-title" data-editable="true" data-key="pillar1Title">以同理心為出發點的質化與量化研究</h3>
+              <p class="pillar-desc" data-editable="true" data-key="pillar1Desc">
+                跳脫主觀猜測，透過深入訪談、易用性測試 (Usability Testing) 與旅程地圖，精確發掘潛在障礙，定義具商業突破點的真實痛點。
+              </p>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-index">01.2</span>
+              <h3 class="pillar-title" data-editable="true" data-key="pillar2Title">模組化設計系統與像素級的美學堅持</h3>
+              <p class="pillar-desc" data-editable="true" data-key="pillar2Desc">
+                建立高重用性、可擴展的 Figma Design System 與 Design Tokens，兼顧視覺一致性與工程端交付 (Handoff) 效率。
+              </p>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-index">01.3</span>
+              <h3 class="pillar-title" data-editable="true" data-key="pillar3Title">跨領域對話能力與前端程式思維</h3>
+              <p class="pillar-desc" data-editable="true" data-key="pillar3Desc">
+                熟悉 HTML5、CSS3 與前端互動邏輯，能以工程師同理的語言探討動效邊界與技術可行性，讓卓越設計精準落實。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SKILLS & CAPABILITY MATRIX (核心技能與能力矩陣) -->
+    <section class="section-editorial skills-section" id="skills">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">02</span>
+            <span class="eyebrow-text">CAPABILITIES & TOOLKIT</span>
+          </div>
+          <h2 class="section-title-editorial" data-editable="true" data-key="skillsTitle">
+            跨越研究、視覺與程式的全向度技能矩陣
+          </h2>
+          <p class="section-subtext" data-editable="true" data-key="skillsSubtext">
+            以全流程產品思維為骨架，融合前瞻美感與工程可行性，構築完整的設計落地能力。
+          </p>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skills-filter-nav" role="tablist">
+          <button type="button" class="filter-tab active" data-filter="all">全覽矩陣 ALL</button>
+          <button type="button" class="filter-tab" data-filter="ux">產品與使用者研究 UI/UX</button>
+          <button type="button" class="filter-tab" data-filter="visual">視覺與動態美學 VISUAL & MOTION</button>
+          <button type="button" class="filter-tab" data-filter="code">工程共感與前端 TECH & DEV</button>
+        </div>
+
+        <!-- Skills Grid Cards -->
+        <div class="skills-grid" id="skillsGrid">
+
+          <!-- Category 1: UI/UX & Product Strategy -->
+          <div class="skill-category-card" data-category="ux">
+            <div class="card-top-tag">
+              <span class="cat-num">CAT. 01</span>
+              <span class="cat-label">PRODUCT & USER EXPERIENCE</span>
+            </div>
+            <h3 class="cat-title">UI/UX 產品體驗與使用者研究</h3>
+            <ul class="skill-meter-list">
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">用戶訪談與易用性測試 (Usability Testing)</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                <p class="skill-item-note">主持超過 25+ 場受訪者深度測試，制定量化 SUS 與質化親和圖</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Figma 元件庫與設計系統架構 (Design Systems)</span>
+                  <span class="skill-level-badge">精通</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                <p class="skill-item-note">熟稔 Auto Layout, Variables, Component Properties 與 Token 規範</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">線框圖與高保真原型 (Wireframing & Prototyping)</span>
+                  <span class="skill-level-badge">精通</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 96%;"></div></div>
+                <p class="skill-item-note">從低保真 User Flow 迅速迭代至高保真可互動展示原型</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">資訊架構 (IA) 與用戶旅程圖 (Journey Mapping)</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                <p class="skill-item-note">梳理複雜產品功能層級，確保導航邏輯直觀清晰</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Visual, Typography & Motion -->
+          <div class="skill-category-card" data-category="visual">
+            <div class="card-top-tag">
+              <span class="cat-num">CAT. 02</span>
+              <span class="cat-label">VISUAL & INTERACTION CRAFT</span>
+            </div>
+            <h3 class="cat-title">視覺排版、品牌識別與動態設計</h3>
+            <ul class="skill-meter-list">
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">字體排印學與雜誌級版面編排 (Typography & Grid)</span>
+                  <span class="skill-level-badge">精通</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 94%;"></div></div>
+                <p class="skill-item-note">嚴謹的基線網格 (Baseline Grid)、層級對比與節奏呼吸感</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">微互動與動態轉場 (Motion Design / After Effects)</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                <p class="skill-item-note">精準控制貝茲曲線與動態時長 (Easing & Timing)，產出 Lottie 檔</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">3D 元素探索與數位場景 (Blender / Spline 3D)</span>
+                  <span class="skill-level-badge">進階</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
+                <p class="skill-item-note">材質打光、基礎幾何建模，無縫嵌入現代 Web 介面</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">色彩體系規劃與無障礙設計 (Color & WCAG 2.1)</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                <p class="skill-item-note">深淺色自適應色盤配置，對比度全面達標 AAA/AA 規範</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Design-to-Code & Technology -->
+          <div class="skill-category-card" data-category="code">
+            <div class="card-top-tag">
+              <span class="cat-num">CAT. 03</span>
+              <span class="cat-label">DESIGN-TO-CODE ALIGNMENT</span>
+            </div>
+            <h3 class="cat-title">前端開發共感與數位實現</h3>
+            <ul class="skill-meter-list">
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">現代響應式排版 (Modern Semantic HTML5 & CSS3)</span>
+                  <span class="skill-level-badge">精通</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                <p class="skill-item-note">CSS Grid, Flexbox, 自定義變數系統與流暢動效處理</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">基礎 JavaScript / DOM 互動邏輯</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
+                <p class="skill-item-note">獨立撰寫頁面微互動、滾動事件、主題切換與表單邏輯</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Git 版本控制與團隊協作流程</span>
+                  <span class="skill-level-badge">熟練</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+                <p class="skill-item-note">理解分支管理、Pull Request 與開發者 Handoff 規範</p>
+              </li>
+              <li class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">AI 輔助設計探索 (Midjourney, Prompt Engineering)</span>
+                  <span class="skill-level-badge">精通</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                <p class="skill-item-note">高效生成 Moodboard、概念視覺與高擬真原型素材</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Capability Highlight Tags -->
+        <div class="tools-strip">
+          <span class="tools-title">常用設計與協作工具箱：</span>
+          <div class="tools-tags">
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">FigJam</span>
+            <span class="tool-tag">After Effects</span>
+            <span class="tool-tag">Illustrator</span>
+            <span class="tool-tag">Photoshop</span>
+            <span class="tool-tag">Spline 3D</span>
+            <span class="tool-tag">Blender</span>
+            <span class="tool-tag">VS Code</span>
+            <span class="tool-tag">Notion</span>
+            <span class="tool-tag">Miro</span>
+            <span class="tool-tag">Zeroheight</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SELECTED WORKS / PROJECTS (精選作品展演) -->
+    <section class="section-editorial projects-section" id="projects">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">03</span>
+            <span class="eyebrow-text">SELECTED WORKS & CASE STUDIES</span>
+          </div>
+          <h2 class="section-title-editorial" data-editable="true" data-key="projectsTitle">
+            精選專案案例：以設計思維解決真實問題
+          </h2>
+          <p class="section-subtext" data-editable="true" data-key="projectsSubtext">
+            點擊任一專案即可查看完整案例剖析（包含背景挑戰、使用者洞察、原型迭代與最終成效）。
+          </p>
+        </div>
+
+        <div class="projects-list">
+
+          <!-- PROJECT 1: AURA APP -->
+          <article class="project-editorial-card" data-project-id="p1">
+            <div class="project-media-col">
+              <div class="project-image-box">
+                <img src="assets/images/project1.jpg" alt="AURA 禪意身心音律 App 介面展示" class="project-thumb">
+                <div class="project-overlay-badge">CASE STUDY 01</div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-category">MOBILE APP • UX RESEARCH & UI DESIGN</span>
+                <span class="proj-year">2024</span>
+              </div>
+              <h3 class="proj-title" data-editable="true" data-key="proj1Title">AURA — 極簡沉浸式身心音律與專注冥想 App</h3>
+              <p class="proj-summary" data-editable="true" data-key="proj1Summary">
+                為忙碌現代人設計的情緒沉靜與聲景體驗應用。透過降低資訊視覺干擾、溫潤的雜誌感自然色盤以及溫暖的微震動回饋，顯著提升使用者的持續練習率達 42%。
+              </p>
+              <div class="proj-tags">
+                <span class="tag">UX Research</span>
+                <span class="tag">Figma Design System</span>
+                <span class="tag">Micro-Interactions</span>
+                <span class="tag">iOS HIG</span>
+              </div>
+              <div class="proj-actions">
+                <button type="button" class="btn btn-primary btn-view-case" data-target="p1">
+                  <span>查看案例深度剖析</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <a href="#contact" class="btn btn-secondary">洽詢此專案</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: NORDIC DESIGN SYSTEM -->
+          <article class="project-editorial-card reverse" data-project-id="p2">
+            <div class="project-media-col">
+              <div class="project-image-box">
+                <img src="assets/images/project2.jpg" alt="NORDIC 北歐排版設計系統" class="project-thumb">
+                <div class="project-overlay-badge">CASE STUDY 02</div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-category">DESIGN SYSTEM • WEB ARCHITECTURE</span>
+                <span class="proj-year">2024</span>
+              </div>
+              <h3 class="proj-title" data-editable="true" data-key="proj2Title">NORDIC — 北歐現代排版設計系統與元件庫架構</h3>
+              <p class="proj-summary" data-editable="true" data-key="proj2Summary">
+                專為內容型媒體與高端電商打造的模組化設計系統。涵蓋 50+ 響應式元件、多階層 Design Tokens、深淺色自適應色階，大幅縮短團隊原型迭代時間 55%。
+              </p>
+              <div class="proj-tags">
+                <span class="tag">Design Tokens</span>
+                <span class="tag">Typography Systems</span>
+                <span class="tag">Figma AutoLayout</span>
+                <span class="tag">Web Standards</span>
+              </div>
+              <div class="proj-actions">
+                <button type="button" class="btn btn-primary btn-view-case" data-target="p2">
+                  <span>查看案例深度剖析</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <a href="#contact" class="btn btn-secondary">洽詢此專案</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: META-FORMS 3D INSTALLATION -->
+          <article class="project-editorial-card" data-project-id="p3">
+            <div class="project-media-col">
+              <div class="project-image-box">
+                <img src="assets/images/project3.jpg" alt="META-FORMS 數位幾何藝術展覽官網" class="project-thumb">
+                <div class="project-overlay-badge">CASE STUDY 03</div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-category">INTERACTIVE WEB • 3D EXPERIMENT</span>
+                <span class="proj-year">2023–2024</span>
+              </div>
+              <h3 class="proj-title" data-editable="true" data-key="proj3Title">META-FORMS — 當代數位幾何雕塑線上展覽體驗</h3>
+              <p class="proj-summary" data-editable="true" data-key="proj3Summary">
+                探索 3D 空間雕塑在 Web 瀏覽器中的感官邊界。融合野獸派版面排版、動態空間旋轉與無縫聲音切換，榮獲校際數位創作展年度最佳視覺設計獎。
+              </p>
+              <div class="proj-tags">
+                <span class="tag">Spline 3D</span>
+                <span class="tag">Creative Coding</span>
+                <span class="tag">Editorial Grid</span>
+                <span class="tag">Exhibition Curation</span>
+              </div>
+              <div class="proj-actions">
+                <button type="button" class="btn btn-primary btn-view-case" data-target="p3">
+                  <span>查看案例深度剖析</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <a href="#contact" class="btn btn-secondary">洽詢此專案</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: EXPERIENCE & MILESTONES (經歷與成長歷程) -->
+    <section class="section-editorial experience-section" id="experience">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">04</span>
+            <span class="eyebrow-text">JOURNEY & MILESTONES</span>
+          </div>
+          <h2 class="section-title-editorial" data-editable="true" data-key="expTitle">
+            每一步探索，皆是為了拓展思維的邊界
+          </h2>
+          <p class="section-subtext" data-editable="true" data-key="expSubtext">
+            結合理論基礎與實務淬鍊，累積跨專案的敏捷協作與設計交付經驗。
+          </p>
+        </div>
+
+        <div class="timeline-editorial">
+
+          <!-- Item 1 -->
+          <div class="timeline-row">
+            <div class="timeline-year-col">
+              <span class="timeline-period" data-editable="true" data-key="t1Period">2024.03 — 現在</span>
+              <span class="timeline-role-badge">實習 / 專案</span>
+            </div>
+            <div class="timeline-body-col">
+              <h3 class="timeline-role-title" data-editable="true" data-key="t1Role">UI/UX 設計實習生 (Product Design Intern)</h3>
+              <div class="timeline-org" data-editable="true" data-key="t1Org">Alpha Nova 數位產品顧問實驗室 • 台北</div>
+              <p class="timeline-desc" data-editable="true" data-key="t1Desc">
+                參與 B2B SaaS 企業數據儀表板與行動應用的介面重構；主導 3 次大型顧客易用性測試，提出 15 項高優先級改善建議並獲工程團隊 100% 採納；協助維護全產品線的 Figma 元件庫。
+              </p>
+              <div class="timeline-tags">
+                <span>B2B SaaS</span>
+                <span>User Interviews</span>
+                <span>Design System Handoff</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-row">
+            <div class="timeline-year-col">
+              <span class="timeline-period" data-editable="true" data-key="t2Period">2023.09 — 2024.01</span>
+              <span class="timeline-role-badge">跨域專題</span>
+            </div>
+            <div class="timeline-body-col">
+              <h3 class="timeline-role-title" data-editable="true" data-key="t2Role">畢業專題 設計組長 (Lead UI/UX Designer)</h3>
+              <div class="timeline-org" data-editable="true" data-key="t2Org">國立大學 數位媒體設計學系 • 畢業設計團隊</div>
+              <p class="timeline-desc" data-editable="true" data-key="t2Desc">
+                帶領 4 人跨領域團隊（設計、程式、行銷），從 0 到 1 打造結合日常療癒與自然環境聲響的互動 App《AURA》；負責產品定位、使用者研究、線框圖、高保真原型與動態展示設計，獲得設計學院專題評選「特優第一名」。
+              </p>
+              <div class="timeline-tags">
+                <span>Team Leadership</span>
+                <span>0-to-1 Product</span>
+                <span>學院特優第一名</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-row">
+            <div class="timeline-year-col">
+              <span class="timeline-period" data-editable="true" data-key="t3Period">2021.09 — 2025.06</span>
+              <span class="timeline-role-badge">學歷與榮譽</span>
+            </div>
+            <div class="timeline-body-col">
+              <h3 class="timeline-role-title" data-editable="true" data-key="t3Role">學士學位 • 數位媒體設計 / 互動科技學程</h3>
+              <div class="timeline-org" data-editable="true" data-key="t3Org">國立大學 傳播與設計學院 (GPA: 3.94 / 4.0)</div>
+              <p class="timeline-desc" data-editable="true" data-key="t3Desc">
+                主修數位介面設計、資訊架構、認知心理學與互動程式設計；連續三學期獲得書卷獎；擔任系學會視覺設計部長，策辦全系年度數位創作展覽。
+              </p>
+              <div class="timeline-tags">
+                <span>連續書卷獎</span>
+                <span>院長榮譽榜</span>
+                <span>系學會視覺部長</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT & DIGITAL BUSINESS CARD (聯絡合作與數位名片) -->
+    <section class="section-editorial contact-section" id="contact">
+      <div class="container">
+        <div class="section-header-editorial">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">05</span>
+            <span class="eyebrow-text">GET IN TOUCH & CONNECT</span>
+          </div>
+          <h2 class="section-title-editorial" data-editable="true" data-key="contactTitle">
+            期待與您聊聊設計、產品或未來的合作機會
+          </h2>
+          <p class="section-subtext" data-editable="true" data-key="contactSubtext">
+            無論是全職職缺、實習機會、專案外包或單純交流設計心得，都非常歡迎隨時聯繫！
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Minimalist Digital Business Card -->
+          <div class="contact-card-editorial">
+            <div class="card-brand-header">
+              <span class="card-brand-tag">DIGITAL BUSINESS CARD</span>
+              <span class="card-chip"></span>
+            </div>
+            <div class="card-identity">
+              <h3 class="card-name" data-editable="true" data-key="cardName">陳思穎 Elena Chen</h3>
+              <p class="card-title-text" data-editable="true" data-key="cardTitle">UI/UX Designer • Digital Product Explorer</p>
+            </div>
+            <div class="card-contact-points">
+              <div class="contact-item">
+                <span class="contact-label">EMAIL 信箱</span>
+                <div class="contact-value-group">
+                  <a href="mailto:elena.chen.design@email.com" class="contact-link" id="emailContactLink" data-editable="true" data-key="cardEmail">elena.chen.design@email.com</a>
+                  <button type="button" class="btn-copy-sm" id="btnCopyEmailInCard" title="一鍵複製信箱">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>複製</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">LOCATION 所在地</span>
+                <span class="contact-val" data-editable="true" data-key="cardLocation">台灣 台北市 (可現場 / 遠端協作)</span>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">CURRENT AVAILABILITY</span>
+                <span class="contact-val highlight-val" data-editable="true" data-key="cardStatus">隨時可到職 • 歡迎預約線上面談</span>
+              </div>
+            </div>
+
+            <!-- Social Links Matrix -->
+            <div class="card-socials">
+              <span class="socials-label">社群與作品平台：</span>
+              <div class="social-pills">
+                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-pill">Behance</a>
+                <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-pill">Dribbble</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill">GitHub</a>
+                <a href="https://medium.com" target="_blank" rel="noopener noreferrer" class="social-pill">Medium</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Quick Message Box -->
+          <div class="contact-form-box">
+            <h3 class="form-title">發送快速訊息 (Quick Inquiries)</h3>
+            <p class="form-desc">留下您的訊息或職缺機會，系統將即時通知並在 24 小時內回覆。</p>
+            <form id="contactForm" class="editorial-form">
+              <div class="form-group">
+                <label for="senderName" class="form-label">您的稱呼 / 公司名稱</label>
+                <input type="text" id="senderName" class="form-input" placeholder="例如：Alex / 某某科技股份有限公司" required>
+              </div>
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">您的聯絡信箱 (Email)</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="messageTopic" class="form-label">洽詢類型</label>
+                <select id="messageTopic" class="form-select">
+                  <option value="job">UI/UX 正職 / 實習面試邀約</option>
+                  <option value="project">設計專案外包與合作</option>
+                  <option value="coffee">設計交流與 Coffee Chat</option>
+                  <option value="other">其他合作洽詢</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">訊息內容</label>
+                <textarea id="senderMessage" class="form-textarea" rows="4" placeholder="請簡要描述您的想法、職缺細節或合作專案..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit-message">
+                <span>傳送訊息</span>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">ELENA CHEN</span>
+          <p class="footer-tagline">PORTFOLIO ARCHIVE • CRAFTED WITH EMPATHY & CODE</p>
+        </div>
+        <div class="footer-nav-col">
+          <a href="#hero" class="back-to-top-btn" id="backToTopBtn">
+            <span>返回頂部 BACK TO TOP</span>
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2024–2025 Elena Chen. All rights reserved. Designed with pure typography and modern CSS.</p>
+        <div class="footer-version">
+          <span>LIVE VERSION 1.2</span>
+          <span>•</span>
+          <span>TAIPEI, TAIWAN</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODAL DRAWER (案例詳細剖析彈窗) -->
+  <div class="case-modal" id="caseModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-category" id="modalCategory">CASE STUDY</div>
+        <button type="button" class="btn-close-modal" id="btnCloseModal" aria-label="關閉彈窗">✕</button>
+      </div>
+      <div class="modal-body" id="modalContent">
+        <!-- Content will be dynamically populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
